@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xml>
+    <name>French (France)</name>
+    <version>1.0.0</version>
+    <creationDate>28-05-2020</creationDate>
+    <author>delbug7</author>
+    <files>
+        <filename>fr_FR.ini</filename>
+    </files>
+    <metadata>
+        <name>French (fr-FR)</name>
+        <nativeName>Français (France)</nativeName>
+        <tag>fr-FR</tag>
+        <rtl>0</rtl>
+    </metadata>
+</xml>

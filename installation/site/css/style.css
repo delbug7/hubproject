@@ -1,0 +1,23 @@
+body {
+    padding: 30px 0;
+    background-color: #2f3439;
+}
+
+/* Gestion de la box */
+.main {
+    background-color: #ededed;
+    width: 1000px;
+    height: auto;
+    margin: 7em auto;
+    border-radius: 1.5em;
+    box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
+}
+
+
+/* logo du site */
+.text_logo{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
