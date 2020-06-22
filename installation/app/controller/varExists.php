@@ -52,7 +52,7 @@ if(isset($_POST['sql_host'], $_POST['sql_user'], $_POST['sql_bdd'])){
         $site_color = addslashes($_POST['site_color']);
         $site_email = addslashes($_POST['site_email']);
         $site_pseudo = addslashes($_POST['site_pseudo']);
-        $site_password = sha1(md5(md5($_POST['site_password'])));
+        $site_password = password_hash($_POST['site_password'], PASSWORD_DEFAULT);
         if(!Fopen::getContentFile(HUBPATH_TMP . '/tmp.php', '$site_name')) {
             Fopen::writeFile(HUBPATH_TMP . '/tmp.php', 'public static $site_name = \'' . $site_name . '\';' . PHP_EOL . 'public static $site_desc = \'' . $site_desc . '\';' . PHP_EOL . 'public static $site_color = \'' . $site_color . '\';' . PHP_EOL . 'public static $site_email = \'' . $site_email . '\';' . PHP_EOL . 'public static $site_pseudo = \'' . $site_pseudo . '\';' . PHP_EOL . 'public static $site_password = \'' . $site_password . '\';' . PHP_EOL . '}');
         }

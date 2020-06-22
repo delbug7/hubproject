@@ -8,7 +8,6 @@ defined('_HUBACCES') or header('Location: /index.php');
 
         $pseudo = \Config::$site_pseudo;
         $password = \Config::$site_password;
-
         if($_POST['pseudo'] == $pseudo && password_verify($_POST['password'], $password)){
             Login::login();
             header('Location: index.php');

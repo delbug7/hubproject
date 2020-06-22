@@ -15,7 +15,7 @@
     <div class="page">
 
         <div class="picture-user">
-            <img src="https://image.ibb.co/k13VYb/user_alt.png" alt=user"">
+            <img src="https://image.ibb.co/k13VYb/user_alt.png" alt="user">
         </div>
 
         <div class="text-login">
