@@ -62,8 +62,12 @@ if(isset($_POST['sql_host'], $_POST['sql_user'], $_POST['sql_bdd'])){
 if(isset($_GET['confirm'])){
     if(file_exists(HUBPATH_TMP . '/tmp.php')) {
 
-        Fopen::createFile(HUBPATH_ROOT . '/configuration.php');
-        Fopen::writeFile(HUBPATH_ROOT . '/configuration.php', file(HUBPATH_TMP . '/tmp.php'));
+        if(Fopen::createFile(HUBPATH_ROOT . '/configuration.php')) {
+            Fopen::writeFile(HUBPATH_ROOT . '/configuration.php', file(HUBPATH_TMP . '/tmp.php'));
+            echo '<script>location.replace("/index.php");</script>';
+        }else{
+
+            $message .= Message::errorMessage($language->getUserLanguage()["ERR_READ_ONLY_TMP_FILE"] .HUBPATH_CONFIGURATION_FILE. $language->getUserLanguage()["ERR_READ_ONLY_SUG"]);
+        }
     }
-    echo '<script>location.replace("/index.php");</script>';
 }
