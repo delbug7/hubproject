@@ -54,7 +54,7 @@ class Fopen{
         return false;
     }
 
-    private static function getContentFile($path){
+    private static function getFile($path){
         if(file_exists($path)){
             return file($path);
         }
@@ -62,7 +62,7 @@ class Fopen{
     }
 
     public static function removeString($path, $char, $replace){
-        $content = self::getContentFile($path);
+        $content = self::getFile($path);
         $text = '';
 
         foreach ($content as $v){
@@ -75,6 +75,20 @@ class Fopen{
         if(self::removeContentFile($path)){
             if(self::writeFile($path, $text)){
                 return true;
+            }
+        }
+        return false;
+    }
+
+    public static function getContentFile($path, $text){
+        if(file_exists($path)){
+            $content = self::getFile($path);
+            $i = 0;
+
+            foreach ($content as $v){
+                if(strpos($v, $text)){
+                    return true;
+                }
             }
         }
         return false;

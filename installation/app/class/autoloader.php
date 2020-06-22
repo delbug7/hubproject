@@ -21,7 +21,7 @@ class Autoloader{
     static function autoload($class){
         $class = str_replace( __NAMESPACE__ . '\\', '', $class);
         $class = str_replace('\\', '/', $class);
-        require HUBPATH_INSTALLATION . '/app/class/' . $class . '.php';
+        require HUBPATH_INSTALLATION . '/app/class/' . strtolower($class) . '.php';
     }
 
 }
