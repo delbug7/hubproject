@@ -4,6 +4,9 @@ namespace Install;
 defined('_HUBACCES') or header('Location: /index.php');
 
 $message = '';
+if(!file_exists(HUBPATH_TMP)){
+    mkdir(HUBPATH_TMP);
+}
 if(!file_exists(HUBPATH_TMP . '/tmp.php')){
     Fopen::createFile(HUBPATH_TMP . '/tmp.php');
 }else if(!isset($_POST['sql_host'], $_POST['sql_user'], $_POST['sql_bdd'], $_POST['site_name'], $_POST['site_color'], $_POST['site_email'], $_POST['site_pseudo'], $_POST['site_password'], $_POST['site_password_v'])){
