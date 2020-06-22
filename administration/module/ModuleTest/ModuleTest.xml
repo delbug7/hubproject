@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xml>
+    <name>Module Test</name>
+    <version>1.0.0</version>
+    <creationDate>28-05-2020</creationDate>
+    <author>delbug7</author>
+    <description>Ceci est un module de test.</description>
+    <files>
+        <filename>Pas encore là</filename>
+    </files>
+</xml>

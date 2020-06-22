@@ -1,0 +1,141 @@
+@font-face {
+    font-family: "HelveticaNeueLTPro-Md";
+    src: url("../fonts/HelveticaNeueLTPro-Md.eot");
+    src: url("../fonts/HelveticaNeueLTPro-Md.eot?#iefix")
+    format("embedded-opentype"),
+    url("../fonts/HelveticaNeueLTPro-Md.woff2") format("woff2"),
+    url("../fonts/HelveticaNeueLTPro-Md.woff") format("woff"),
+    url("../fonts/HelveticaNeueLTPro-Md.ttf") format("truetype"),
+    url("../fonts/HelveticaNeueLTPro-Md.svg#HelveticaNeueLTPro-Md")
+    format("svg");
+    font-weight: 500;
+    font-style: normal;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0px;
+}
+
+body {
+}
+
+.background-image {
+    width: 100%;
+    height: 100vh;
+    background-image: url(../img/form/bg-image.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    -webkit-background-size: cover;
+    background-size: cover;
+    -webkit-filter: opacity(50%);
+    -webkit-transition: all 0.1s ease;
+    -moz-transition: all 0.1s ease;
+    -o-transition: all 0.1s ease;
+    -ms-transition: all 0.1s ease;
+    transition: all 0.1s ease;
+}
+
+.page {
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 30%;
+}
+.picture-user {
+    width: 55px;
+    height: 55px;
+    margin-left: 50%;
+}
+.text-login {
+    display: inline-block;
+    margin-left: 22%;
+    padding: 0.7rem;
+}
+.text-login span {
+    color: white;
+    font-family: "HelveticaNeueLTPro-Md", sans-serif;
+    font-size: 24px;
+    font-weight: 300;
+    font-style: normal;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
+}
+
+.input-forms {
+    margin-left: 50%;
+    transform: translateX(-79%);
+}
+.input-login {
+    display: block;
+    width: 15.5rem;
+    padding-left: 2.1rem;
+    padding-top: 0.7rem;
+    padding-bottom: 0.7rem;
+    margin: 0.9rem;
+    border: 1px solid #7a7a7a;
+    border-radius: 5px;
+    background: linear-gradient(#9c9e96, #949593);
+    background-image: url(https://image.ibb.co/mvUnDb/login.png);
+    background-repeat: no-repeat;
+    background-position: 13px 13px;
+}
+.input-password {
+    display: block;
+    width: 15.5rem;
+    padding-left: 2.1rem;
+    padding-top: 0.7rem;
+    padding-bottom: 0.7rem;
+    margin: 0.9rem;
+    border: 1px solid #7a7a7a;
+    border-radius: 5px;
+    background: linear-gradient(#9c9e96, #949593);
+    background-image: url(https://image.ibb.co/fwOQzG/pass.png);
+    background-repeat: no-repeat;
+    background-position: 12px 13px;
+}
+.button {
+    margin-left: 33.5%;
+    transform: translateX(-27%);
+}
+.button-login {
+    padding: 0.6rem 6.7rem 0.6rem 6.7rem;
+    border: 1px solid #7a7a7a;
+    border-radius: 5px;
+    background: linear-gradient(
+            #ffd885 1%,
+            #ff9859 10%,
+            #ff8642 45%,
+            #ff7539 55%,
+            #ff632b 100%
+    );
+    color: white;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
+    font-family: "HelveticaNeueLTPro-Md", sans-serif;
+}
+
+.input-login:focus,
+.input-password:focus {
+    outline: none;
+}
+::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
+    color: white;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
+}
+::-moz-placeholder {
+    /* Firefox 19+ */
+    color: white;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
+}
+:-ms-input-placeholder {
+    /* IE 10+ */
+    color: white;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
+}
+:-moz-placeholder {
+    /* Firefox 18- */
+    color: white;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
+}
