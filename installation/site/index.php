@@ -13,8 +13,8 @@
     <?= $message ?>
         <ul id="progressbar">
             <li id="lietape" <?php if($etape->getEtape() >= 1){ echo 'class="active"';} ?>>Configuration de la base de données</li>
-            <li id="lietape" <?php if($etape->getEtape() >= 2){ echo 'class="active"';} ?>>Social Profiles</li>
-            <li id="lietape" <?php if($etape->getEtape() >= 3){ echo 'class="active"';} ?>>Personal Details</li>
+            <li id="lietape" <?php if($etape->getEtape() >= 2){ echo 'class="active"';} ?>>Configuration du site</li>
+            <li id="lietape" <?php if($etape->getEtape() >= 3){ echo 'class="active"';} ?>>Validation des données</li>
         </ul>
         <div class="main">
             <a href="https://github.com/delbug7/Hubproject"><img src="/site/images/logo/text_logo.png" alt="Logo du site." class="text_logo"></a>
