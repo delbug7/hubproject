@@ -9,10 +9,10 @@
     list-style-type: none;
     color: yellow;
     text-transform: uppercase;
-    font-size: 9px;
     width: 33.33%;
     float: left;
     position: relative;
+    text-align: center;
 }
 #progressbar #lietape:before {
     content: counter(step);
@@ -25,6 +25,7 @@
     background: white;
     border-radius: 3px;
     margin: 0 auto 5px auto;
+    text-align: center;
 }
 /*progressbar connectors*/
 #progressbar #lietape:after {
