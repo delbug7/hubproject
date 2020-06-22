@@ -67,7 +67,7 @@ if(isset($_GET['confirm'])){
             echo '<script>location.replace("/index.php");</script>';
         }else{
 
-            $message .= Message::errorMessage($language->getUserLanguage()["ERR_READ_ONLY_TMP_FILE"] .HUBPATH_CONFIGURATION_FILE. $language->getUserLanguage()["ERR_READ_ONLY_SUG"]);
+            $message .= Message::errorMessage($language->getUserLanguage()["ERR_READ_ONLY_TMP_FILE"]. ' ' .HUBPATH_CONFIGURATION_FILE. ' ' .$language->getUserLanguage()["ERR_READ_ONLY_SUG"]. HUBPATH_TMP);
         }
     }
 }
