@@ -81,4 +81,19 @@ class Etape{
             return 'error';
         }
     }
+
+    /**
+     * @param $form
+     */
+    public function etape4($form){
+        if(file_exists(HUBPATH_TMP . '/tmp.php')){
+            $file = Fopen::getFile(HUBPATH_TMP . '/tmp.php');
+            $text = '';
+            foreach ($file as $v){
+                $text .= $v. '<br>';
+            }
+            return $text;
+        }
+        return false;
+    }
 }

@@ -54,7 +54,7 @@ class Fopen{
         return false;
     }
 
-    private static function getFile($path){
+    public static function getFile($path){
         if(file_exists($path)){
             return file($path);
         }

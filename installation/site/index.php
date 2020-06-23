@@ -21,8 +21,8 @@
 
                 <?php if($etape->getEtape() == 1){ echo '<form action="#" method="post">'; echo $etape->etape1($form); echo '</form>';} ?>
                 <?php if($etape->getEtape() == 2){ echo '<form action="#" method="post">'; echo $etape->etape2($form); echo '</form>';} ?>
-
-            <?php if($etape->getEtape() == 3){ echo $etape->etape3($form);} ?>
+                <?php if($etape->getEtape() == 3){ echo $etape->etape3($form);} ?>
+                <?php if($etape->getEtape() == 4){ echo '&lt;?php'; echo $etape->etape4($form);echo '?&gt;';} ?>
         </div>
     </body>
 </html>

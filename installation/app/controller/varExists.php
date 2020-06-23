@@ -66,8 +66,8 @@ if(isset($_GET['confirm'])){
             Fopen::writeFile(HUBPATH_ROOT . '/configuration.php', file(HUBPATH_TMP . '/tmp.php'));
             echo '<script>location.replace("/index.php");</script>';
         }else{
-
             $message .= Message::errorMessage($language->getUserLanguage()["ERR_READ_ONLY_TMP_FILE"]. ' ' .HUBPATH_CONFIGURATION_FILE. ' ' .$language->getUserLanguage()["ERR_READ_ONLY_SUG"]. HUBPATH_TMP);
+            $etape->setEtape(4);
         }
     }
 }
