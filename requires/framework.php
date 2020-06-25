@@ -18,5 +18,5 @@ if(!isset($_GET['page'])){
 if($_GET['page'] == 'index') {
     require_once HUBPATH_PAGES . DIRECTORY_SEPARATOR . 'index.php';
 }else {
-    require_once HUBPATH_PAGES . DIRECTORY_SEPARATOR . $_GET['page'] . DIRECTORY_SEPARATOR. 'index.php';
+    require_once HUBPATH_PAGES . DIRECTORY_SEPARATOR . lcfirst($_GET['page']) . DIRECTORY_SEPARATOR. 'index.php';
 }

@@ -21,8 +21,8 @@ class Autoloader{
      */
     static function autoload($class){
         $class = str_replace( __NAMESPACE__, '', $class);
-        $class = str_replace('\\', '/', $class);
-        require HUBPATH_ADMINISTRATION . DIRECTORY_SEPARATOR. 'app' .DIRECTORY_SEPARATOR. 'class'  .$class . '.php';
+        $class = str_replace('\\', '', $class);
+        require HUBPATH_ADMINISTRATION . DIRECTORY_SEPARATOR. 'app' .DIRECTORY_SEPARATOR. 'class'  .DIRECTORY_SEPARATOR . lcfirst($class) . '.php';
     }
 
 }
