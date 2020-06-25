@@ -21,12 +21,4 @@ require_once HUBPATH_BASE . '/requires/framework.php';
 
 
 
-//hard codde lol
-if(file_exists('configuration.php')){
-    require_once 'configuration.php';
-    echo '<title>' .\Config::$site_name. '</title>';
-    echo '<p>Nom du site: '.\Config::$site_name.'</p>';
-    echo '<p>Description du site: '.\Config::$site_desc.'</p>';
-    echo '<p>Email du WebMaster: '.\Config::$site_email.'</p>';
-    echo '<p>Couleur principal du site: <strong style="color:' .\Config::$site_color. '">' .\Config::$site_color. '</strong></p>';
-}
+//https://pagedraw.io/tutorials/basics

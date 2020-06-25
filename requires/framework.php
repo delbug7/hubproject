@@ -12,3 +12,11 @@ if (!file_exists(HUBPATH_CONFIGURATION_FILE)) {
         exit;
     }
 }
+if(!isset($_GET['page'])){
+    $_GET['page'] = 'index';
+}
+if($_GET['page'] == 'index') {
+    require_once HUBPATH_PAGES . DIRECTORY_SEPARATOR . 'index.php';
+}else {
+    require_once HUBPATH_PAGES . DIRECTORY_SEPARATOR . $_GET['page'] . DIRECTORY_SEPARATOR. 'index.php';
+}

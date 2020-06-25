@@ -5,7 +5,7 @@
             <title>Dashboard</title>
             <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
             <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-            <?php require_once HUBPATH_SITEDIR . DIRECTORY_SEPARATOR. 'css' .DIRECTORY_SEPARATOR. 'dashboard-header.php'?>
+            <link rel="stylesheet" href="/administration/site/css/dashboard-header.css">
             <?php require_once HUBPATH_SITEDIR . DIRECTORY_SEPARATOR. 'css' .DIRECTORY_SEPARATOR. 'dashboard-main.php'?>
         </head>
         <body>
@@ -20,6 +20,8 @@
                 <ul class="menu-items">
                     <li><a href="index.php?page=dashboard">Dashboard</a></li>
                     <li><a href="index.php?page=module">Module</a></li>
+                    <li><a href="index.php?page=pages">Pages</a></li>
+                    <li><a href="index.php?page=setting">Paramètre</a></li>
                     <li><a href="site/disconnect.php">Déconnexion</a></li>
                 </ul>
             </nav>
@@ -30,7 +32,7 @@
                         <i class="material-icons">menu</i>
                     </div>
                     <div class="logo-icon">
-                        <a href="http://www.mediahawkz.com/"><img alt="logo" src="/site/images/logo/logo.png" width="50"></a>
+                        <a href="index.php"><img alt="logo" src="/site/images/logo/logo.png" width="50"></a>
                     </div>
                 </div>
             </header>

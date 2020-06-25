@@ -11,26 +11,33 @@ class Login{
         $_SESSION['pseudo'] = $_POST['pseudo'];
         if(!file_exists(HUBPATH_TMP . DIRECTORY_SEPARATOR. 'tmp.php')){
             if(!Fopen::createFile(HUBPATH_TMP . DIRECTORY_SEPARATOR. 'tmp.php')){
-                echo '<script>alert(\'Erreur impossible d\\\'écrire dans le répertoire: ' .HUBPATH_TMP. '\\\');</script>';
+                echo '<script>alert("Erreur impossible d\\\'écrire dans le répertoire: ' .HUBPATH_TMP. '");</script>';
+            }else{
+                header('Location: index.php');
             }
         }else {
-            if(Fopen::removeContentFile(HUBPATH_TMP . DIRECTORY_SEPARATOR. 'tmp.php')){
-                echo '<script>alert(\'Erreur impossible d\\\'écrire dans le répertoire: ' .HUBPATH_TMP. '\\\');</script>';
+            if(!Fopen::removeContentFile(HUBPATH_TMP . DIRECTORY_SEPARATOR. 'tmp.php')){
+                echo '<script>alert("Erreur impossible d\\\'écrire dans le répertoire: ' .HUBPATH_TMP. '");</script>';
+            }else{
+                header('Location: index.php');
             }
         }
         if(0 == filesize( HUBPATH_TMP . DIRECTORY_SEPARATOR. 'tmp.php' )) {
             if(Fopen::writeFile(HUBPATH_TMP . DIRECTORY_SEPARATOR. 'tmp.php', '<?php' . PHP_EOL . 'class Temp{')) {
                 Fopen::writeFile(HUBPATH_TMP . DIRECTORY_SEPARATOR . 'tmp.php', 'public static $phpsessid = \'' . $_COOKIE['PHPSESSID'] . '\';');
                 Fopen::writeFile(HUBPATH_TMP . DIRECTORY_SEPARATOR . 'tmp.php', '}');
+                header('Location: index.php');
             }else{
-                echo '<script>alert(\'Erreur impossible d\\\'écrire dans le répertoire: ' .HUBPATH_TMP. '\\\');</script>';
+                echo '<script>alert("Erreur impossible d\\\'écrire dans le répertoire: ' .HUBPATH_TMP. '");</script>';
             }
         }
     }
 
     public static function disconnect(){
         if(file_exists(HUBPATH_TMP . DIRECTORY_SEPARATOR. 'tmp.php')){
-            Fopen::removeContentFile(HUBPATH_TMP . DIRECTORY_SEPARATOR. 'tmp.php');
+            if(!Fopen::removeContentFile(HUBPATH_TMP . DIRECTORY_SEPARATOR. 'tmp.php')){
+                echo '<script>alert("Erreur impossible d\\\'écrire dans le fichier: ' .HUBPATH_TMP. '/tmp.php");</script>';
+            }
         }
         session_unset();
         session_destroy();

@@ -55,7 +55,7 @@ class Fopen{
         return false;
     }
 
-    private static function getContentFile($path){
+    public static function getContentFile($path){
         if(file_exists($path)){
             return file($path);
         }
@@ -67,10 +67,12 @@ class Fopen{
         $text = '';
 
         foreach ($content as $v){
-            if(strpos($v, $char)){
-                $text .= str_replace($char, $replace, $v);
-            }else{
-                $text .= $v;
+            if($v != PHP_EOL) {
+                if (strpos($v, $char)) {
+                    $text .= str_replace($char, $replace, $v);
+                } else {
+                    $text .= $v;
+                }
             }
         }
         if(self::removeContentFile($path)){
@@ -80,4 +82,5 @@ class Fopen{
         }
         return false;
     }
+
 }
