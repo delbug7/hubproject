@@ -15,6 +15,7 @@ if (!file_exists(HUBPATH_CONFIGURATION_FILE)) {
 if(!isset($_GET['page'])){
     $_GET['page'] = 'index';
 }
+echo '<link href="https://netdna.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.css" rel="stylesheet">';
 if($_GET['page'] == 'index') {
     require_once HUBPATH_PAGES . DIRECTORY_SEPARATOR . 'index.php';
 }else {

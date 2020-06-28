@@ -1,4 +1,4 @@
-<?php defined('_HUBACCES') or header('Location: /index.php'); ?>
+<?php defined('_HUBACCES') or header('Location: '.DIRECTORY_SEPARATOR.'index.php'); ?>
 <?php
 
 if(isset($_GET['param']) && !isset($_GET['value'])){

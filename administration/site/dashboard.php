@@ -18,11 +18,11 @@
                     </div>
                 </div>
                 <ul class="menu-items">
-                    <li><a href="index.php?page=dashboard">Dashboard</a></li>
-                    <li><a href="index.php?page=module">Module</a></li>
-                    <li><a href="index.php?page=pages">Pages</a></li>
-                    <li><a href="index.php?page=setting">Paramètre</a></li>
-                    <li><a href="site/disconnect.php">Déconnexion</a></li>
+                    <li><a href="index.php?page=dashboard"><?= \Administration\app\Language::getLanguage($_SESSION['language'])["DASHBOARD_TITLE"] ?></a></li>
+                    <li><a href="index.php?page=module"><?= \Administration\app\Language::getLanguage($_SESSION['language'])["MODULE_TITLE"] ?></a></li>
+                    <li><a href="index.php?page=pages"><?= \Administration\app\Language::getLanguage($_SESSION['language'])["PAGES_TITLE"] ?></a></li>
+                    <li><a href="index.php?page=setting"><?= \Administration\app\Language::getLanguage($_SESSION['language'])["PARAMETRE_TITLE"] ?></a></li>
+                    <li><a href="site/disconnect.php"><?= \Administration\app\Language::getLanguage($_SESSION['language'])["DECONNEXION_TITLE"] ?></a></li>
                 </ul>
             </nav>
 

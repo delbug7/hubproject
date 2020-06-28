@@ -42,5 +42,6 @@ class Login{
         session_unset();
         session_destroy();
         unset($_SESSION['pseudo']);
+        unset($_SESSION['language']);
     }
 }

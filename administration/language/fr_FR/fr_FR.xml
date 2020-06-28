@@ -5,7 +5,8 @@
     <creationDate>28-05-2020</creationDate>
     <author>delbug7</author>
     <files>
-        <filename>fr_FR.ini</filename>
+        <name>fr_FR</name>
+        <extension>.ini</extension>
     </files>
     <metadata>
         <name>French (fr-FR)</name>

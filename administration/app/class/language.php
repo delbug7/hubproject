@@ -1,27 +1,19 @@
 <?php
 
-namespace Install;
+namespace Administration\app;
+
 defined('_HUBACCES') or header('Location: /index.php');
 class Language{
-    private $UserLng;
-    private $langSelected;
-    public $lang = array();
 
-
-    public function __construct($userLanguage = 'fr_FR'){
-
-        $this->UserLng = $userLanguage;
-        //construct lang file
-        $langFile = HUBPATH_INSTALLATION . '/language/'. $this->UserLng . '/'. $this->UserLng .'.ini';
+    /**
+     * @param $lang
+     */
+    public static function getLanguage($lang){
+        $langFile = HUBPATH_ADMINISTRATION . DIRECTORY_SEPARATOR. 'language'.DIRECTORY_SEPARATOR . $lang . DIRECTORY_SEPARATOR . $lang. '.ini';
         if(!file_exists($langFile)){
-            //throw new Execption("Language could not be loaded"); //or default to a language
+            return false;
         }
-
-        $this->lang = parse_ini_file($langFile);
-    }
-
-    public function getUserLanguage(){
-        return $this->lang;
+        return parse_ini_file($langFile);
     }
 
 }

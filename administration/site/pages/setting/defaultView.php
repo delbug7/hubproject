@@ -1,8 +1,8 @@
-<?php defined('_HUBACCES') or header('Location: /index.php'); ?>
+<?php defined('_HUBACCES') or header('Location: ' .DIRECTORY_SEPARATOR. 'index.php'); ?>
 <?php echo '
-<h2>Compte Super Utilisateur: </h2>
+<h2>' .\Administration\app\Language::getLanguage($_SESSION['language'])["PARAMETRE_H2_ACCOUNT"]. '</h2>
 <p>
-    E-mail: ' .\Config::$site_email. '
+    ' .\Administration\app\Language::getLanguage($_SESSION['language'])["PARAMETRE_EMAIL"]. ' ' .\Config::$site_email. '
 <form method="get" action="index.php">
     <input type="hidden" name="page" value="setting">
     <input type="hidden" name="param" value="site_email">
@@ -10,16 +10,16 @@
 </form>
 </p>
 <p>
-    Pseudo: ' .\Config::$site_pseudo. '
+    ' .\Administration\app\Language::getLanguage($_SESSION['language'])["PARAMETRE_PSEUDO"]. ' ' .\Config::$site_pseudo. '
 <form method="get" action="index.php">
     <input type="hidden" name="page" value="setting">
     <input type="hidden" name="param" value="site_pseudo">
     <input type="submit" name="modif" value="Modification">
 </form>
 </p>
-<h2>Description du site:</h2>
+<h2>' .\Administration\app\Language::getLanguage($_SESSION['language'])["PARAMETRE_H2_SITE"]. '</h2>
 <p>
-    Nom du site: ' .\Config::$site_name. '
+    ' .\Administration\app\Language::getLanguage($_SESSION['language'])["PARAMETRE_SITE_TITLE"]. ' ' .\Config::$site_name. '
 <form method="get" action="index.php">
     <input type="hidden" name="page" value="setting">
     <input type="hidden" name="param" value="site_name">
@@ -27,7 +27,7 @@
 </form>
 </p>
 <p>
-    Description du site: ' .\Config::$site_desc. '
+    ' .\Administration\app\Language::getLanguage($_SESSION['language'])["PARAMETRE_SITE_DESCRIPTION"]. ' ' .\Config::$site_desc. '
 <form method="get" action="index.php">
     <input type="hidden" name="page" value="setting">
     <input type="hidden" name="param" value="site_desc">

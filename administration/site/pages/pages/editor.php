@@ -1,11 +1,10 @@
-
+<?php defined('_HUBACCES') or header('Location: ' .DIRECTORY_SEPARATOR. 'index.php'); ?>
 
     <link href="https://netdna.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote.css" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
     <script src="https://netdna.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js"></script>
 
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote.css" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote.js"></script>
     <style>
         .progress-bar {
             position: relative;
@@ -53,8 +52,9 @@
     </script>
     <?php
     if(file_exists(HUBPATH_PAGES . DIRECTORY_SEPARATOR . $_GET['file'] . DIRECTORY_SEPARATOR. 'index.php')) {
-
         $html = \Administration\app\Fopen::getContentFile(HUBPATH_PAGES . DIRECTORY_SEPARATOR . $_GET['file'] . DIRECTORY_SEPARATOR. 'index.php');
+    }else if($_GET['file'] = 'index'){
+        $html = \Administration\app\Fopen::getContentFile(HUBPATH_PAGES . DIRECTORY_SEPARATOR. 'index.php');
     }
     ?>
     <form method="post">
@@ -68,6 +68,7 @@
         <input type="submit">
     </form>
 
+<?php require_once HUBPATH_ADMINISTRATION . DIRECTORY_SEPARATOR. 'site' .DIRECTORY_SEPARATOR. 'pages' .DIRECTORY_SEPARATOR. 'pages' .DIRECTORY_SEPARATOR. 'js' .DIRECTORY_SEPARATOR. 'summernote.php'?>
 <script src="https://static.codepen.io/assets/common/stopExecutionOnTimeout-157cd5b220a5c80d4ff8e0e70ac069bffd87a61252088146915e8726e5d9f147.js"></script>
 <script id="rendered-js">
     $('#summernote').summernote({

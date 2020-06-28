@@ -14,10 +14,8 @@ define('_HUBACCES', 1);
 if (!defined('_HUBDEFINES'))
 {
     define('HUBPATH_BASE', __DIR__);
-    require_once HUBPATH_BASE . '/requires/defined.php';
+    require_once HUBPATH_BASE . DIRECTORY_SEPARATOR. 'requires' .DIRECTORY_SEPARATOR. 'defined.php';
 }
-if(!isset($_GET['page'])){
-    $_GET['page'] = 'dashboard';
-}
-require_once HUBPATH_BASE . '/requires/framework.php';
-require_once HUBPATH_BASE . '/requires/global.php';
+
+require_once HUBPATH_BASE . DIRECTORY_SEPARATOR. 'requires' .DIRECTORY_SEPARATOR. 'framework.php';
+require_once HUBPATH_BASE . DIRECTORY_SEPARATOR. 'requires' .DIRECTORY_SEPARATOR. 'global.php';
