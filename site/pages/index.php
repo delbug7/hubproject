@@ -1,3 +1,3 @@
 
 <?php defined('_HUBACCES') or header('Location: /index.php'); ?>
-<p><a href="http://192.168.1.15/index.php?page=test">test</a><br></p><p><a href="http://192.168.1.15/index.php?page=test_test">test_test</a></p><p><br></p><p></p><pre>tesst</pre><blockquote><p>test</p></blockquote><table class="table table-bordered"><tbody><tr><td style="text-align: right;">i</td><td>i</td><td>i</td></tr><tr><td><p>i</p></td><td><p style="text-align: center; margin-left: 25px;">i</p></td><td>i</td></tr></tbody></table><p><br></p><p></p>
+<p><br></p><p></p>

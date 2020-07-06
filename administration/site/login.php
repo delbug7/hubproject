@@ -30,7 +30,13 @@
                     <button class="button-login" type="submit">Login</button>
                 </div>
             </form>
-            <a href="../index.php">Revenir en arrière !</a>
+            <?php
+            if(Config::$site_isOnline) {
+                echo '<a href="../index.php">Revenir en arrière !</a>';
+            }else {
+                echo '<p>Le site est actuellement hors-ligne</p>';
+            }
+            ?>
         </div>
 
 

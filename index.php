@@ -20,5 +20,3 @@ if (!defined('_HUBDEFINES'))
 require_once HUBPATH_BASE . '/requires/framework.php';
 
 
-
-//https://pagedraw.io/tutorials/basics

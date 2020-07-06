@@ -12,6 +12,10 @@ if (!file_exists(HUBPATH_CONFIGURATION_FILE)) {
         exit;
     }
 }
+require_once HUBPATH_CONFIGURATION_FILE;
+if(!Config::$site_isOnline){
+    header('Location: /administration/index.php');
+}
 if(!isset($_GET['page'])){
     $_GET['page'] = 'index';
 }
