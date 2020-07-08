@@ -5,8 +5,10 @@
 <?php require_once 'site' .DIRECTORY_SEPARATOR. 'pages' .DIRECTORY_SEPARATOR. 'pages' .DIRECTORY_SEPARATOR. 'controller.php' ?>
 <div class="main-div">
     <h1 class="page-title"><?= \Administration\app\Language::getLanguage($_SESSION['language'])["PAGES_TITLE"]; ?></h1>
-    <div class="page-content">
-        <?php
+    <?php
+    if(!isset($_GET['ModifPage'])) {
+        echo '<div class="page-content">';
+    }
             if(!isset($_GET['CreatePage']) && !isset($_GET['ModifPage'])){
         echo '<table>
             <thead>
@@ -61,9 +63,11 @@
                         <label>Description de la page: </label><input type="text" name="PageDesc" placeholder="Description de la page" required><br>
                         <input type="submit" name="ValidPage" value="submit">
                         </form>';
-            }else if(isset($_GET['ModifPage'])){
-                require_once 'site' .DIRECTORY_SEPARATOR. 'pages' .DIRECTORY_SEPARATOR. 'pages' .DIRECTORY_SEPARATOR. 'editor.php';
             }
-            ?>
-    </div>
+    if(!isset($_GET['ModifPage'])) {
+        echo '</div>';
+    }
+    if(isset($_GET['ModifPage'])){
+        require_once 'site' .DIRECTORY_SEPARATOR. 'pages' .DIRECTORY_SEPARATOR. 'pages' .DIRECTORY_SEPARATOR. 'editor.php';
+    }?>
 </div>

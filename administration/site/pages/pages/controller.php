@@ -57,26 +57,32 @@ if(isset($_GET['PageName'], $_GET['PageDesc'], $_GET['ValidPage'])){
     header('Location: index.php?page=pages');
 }
 
-if(isset($_POST['file'], $_POST['text'])){
-    if(\Administration\app\Fopen::removeContentFile(HUBPATH_PAGES . DIRECTORY_SEPARATOR . $_GET['file'] . DIRECTORY_SEPARATOR. 'index.php') && $_GET['file'] != 'index') {
-        if (\Administration\app\Fopen::writeFile(HUBPATH_PAGES . DIRECTORY_SEPARATOR . $_GET['file'] . DIRECTORY_SEPARATOR . 'index.php', '<?php defined(\'_HUBACCES\') or header(\'Location: /index.php\'); ?>' . PHP_EOL . $_POST['text'])) {
-            echo '<script>alert("Fichier modifier avec succes");</script>';
+if(isset($_POST['page'], $_POST['file'], $_POST['modifPage'], $_POST['html'], $_POST['css'])){
+    if(\Administration\app\Fopen::removeContentFile(HUBPATH_PAGES . DIRECTORY_SEPARATOR . $_POST['file'] . DIRECTORY_SEPARATOR. 'index.php') && $_POST['file'] != 'index') {
+        if (\Administration\app\Fopen::writeFile(HUBPATH_PAGES . DIRECTORY_SEPARATOR . $_POST['file'] . DIRECTORY_SEPARATOR . 'index.php', '<?php defined(\'_HUBACCES\') or header(\'Location: /index.php\'); ?>' . PHP_EOL. '<style>' .PHP_EOL . $_POST['css']. PHP_EOL. '</style>' .PHP_EOL . $_POST['html'])) {
+            echo '<script>alert("Fichier modifier avec succes");localStorage.clear();</script>';
             echo '<meta http-equiv="refresh" content="1;URL=index.php?page=pages">';
+            exit();
+
         } else {
-            echo '<script>alert("Impossible de modifier le fichier");</script>';
+            echo '<script>alert("Impossible de modifier le fichier");localStorage.clear();</script>';
             echo '<meta http-equiv="refresh" content="1;URL=index.php?page=pages">';
+            exit();
         }
     }else if($_GET['file'] == 'index'){
         \Administration\app\Fopen::removeContentFile(HUBPATH_PAGES . DIRECTORY_SEPARATOR. 'index.php');
-        if (\Administration\app\Fopen::writeFile(HUBPATH_PAGES . DIRECTORY_SEPARATOR. 'index.php', '<?php defined(\'_HUBACCES\') or header(\'Location: /index.php\'); ?>' . PHP_EOL . $_POST['text'])) {
-            echo '<script>alert("Fichier modifier avec succes");</script>';
+        if (\Administration\app\Fopen::writeFile(HUBPATH_PAGES . DIRECTORY_SEPARATOR. 'index.php', '<?php defined(\'_HUBACCES\') or header(\'Location: /index.php\'); ?>' . PHP_EOL. '<style>' .PHP_EOL . $_POST['css']. '</style>' .PHP_EOL . $_POST['html'])) {
+            echo '<script>alert("Fichier modifier avec succes");localStorage.clear();</script>';
             echo '<meta http-equiv="refresh" content="1;URL=index.php?page=pages">';
+            exit();
         } else {
-            echo '<script>alert("Impossible de modifier le fichier");</script>';
+            echo '<script>alert("Impossible de modifier le fichier");localStorage.clear();</script>';
             echo '<meta http-equiv="refresh" content="1;URL=index.php?page=pages">';
+            exit();
         }
     }else{
-        echo '<script>alert("Impossible de modifier le fichier");</script>';
+        echo '<script>alert("Impossible de modifier le fichier");localStorage.clear();</script>';
         echo '<meta http-equiv="refresh" content="1;URL=index.php?page=pages">';
+        exit();
     }
 }

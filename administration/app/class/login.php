@@ -9,6 +9,12 @@ class Login{
     public static function login(){
 
         $_SESSION['pseudo'] = $_POST['pseudo'];
+        if(!dir(HUBPATH_TMP)){
+            if(!mkdir(HUBPATH_TMP)){
+                echo 'Impossible d\'écrire dans le dossier Administration';
+                exit();
+            }
+        }
         if(!file_exists(HUBPATH_TMP . DIRECTORY_SEPARATOR. 'tmp.php')){
             if(!Fopen::createFile(HUBPATH_TMP . DIRECTORY_SEPARATOR. 'tmp.php')){
                 echo '<script>alert("Erreur impossible d\\\'écrire dans le répertoire: ' .HUBPATH_TMP. '");</script>';
